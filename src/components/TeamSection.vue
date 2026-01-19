@@ -8,14 +8,14 @@ const team = [
     name: 'Dani',
     role: 'Community Manager & Ventas',
     description: 'Especialista en conectar con tu audiencia y cerrar ventas.',
-    image: daniImage,
+    image: moreImage,
     color: 'secondary'
   },
   {
     name: 'More',
     role: 'Diseñadora Gráfica & Social Media Manager',
     description: 'Encargada de todo el área de creación y publicidad para que tu negocio llegue a más personas.',
-    image: moreImage,
+    image: daniImage,
     color: 'primary'
   },
   {
