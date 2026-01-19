@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import vibeCheckHeaderLogo from '../assets/vibe-check-header-logo.png'
 
 const drawer = ref(false)
 const menuItems = [
@@ -14,8 +15,8 @@ const menuItems = [
   <v-app-bar app color="white" elevation="1" height="80" class="px-4">
     <div class="d-flex align-center w-100 container">
       <v-toolbar-title class="font-weight-bold text-h5" style="cursor: pointer" @click="$vuetify.goTo('#hero')">
-        <a href="#hero" class="text-decoration-none">
-          <span class="text-primary">Asesor</span><span class="text-secondary">Social</span>
+        <a href="#hero" class="text-decoration-none align-center">
+          <v-img :src="vibeCheckHeaderLogo" alt="Vibe Check Logo" width="150" style="margin-top: -50px;"></v-img>
         </a>
       </v-toolbar-title>
 
@@ -34,17 +35,7 @@ const menuItems = [
           {{ item.title }}
         </v-btn>
         
-        <v-btn
-          href="https://wa.me/1234567890?text=Hola,%20quiero%20reservar%20una%20auditoría"
-          target="_blank"
-          color="secondary"
-          variant="flat"
-          class="ml-4 text-capitalize font-weight-bold px-6"
-          rounded="lg"
-          elevation="2"
-        >
-          Reservar Auditoría
-        </v-btn>
+      
       </div>
 
       <!-- Mobile Menu Button -->
@@ -70,16 +61,7 @@ const menuItems = [
         @click="drawer = false"
       ></v-list-item>
       <v-list-item class="mt-4">
-        <v-btn
-          href="https://wa.me/1234567890?text=Hola,%20quiero%20reservar%20una%20auditoría"
-          target="_blank"
-          color="secondary"
-          block
-          variant="flat"
-          @click="drawer = false"
-        >
-          Reservar Auditoría
-        </v-btn>
+        
       </v-list-item>
     </v-list>
   </v-navigation-drawer>

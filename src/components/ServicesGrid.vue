@@ -1,30 +1,33 @@
 <script setup>
-import auditImage from '../assets/audit-image.png'
+import brandingImage from '../assets/service-branding.jpg'
+import contentImage from '../assets/service-content.jpg'
+import webImage from '../assets/service-web.jpg'
+import growthImage from '../assets/service-growth.png'
+
 const services = [
   {
-    title: 'Auditoría de Perfil',
-    description: 'Análisis profundo de tu cuenta actual. Identificamos errores, oportunidades de mejora y optimizamos tu biografía y feed.',
-    icon: 'mdi-magnify',
-    color: 'blue-grey',
-    price: 'Desde $97',
-    image: auditImage
+    title: 'Branding e Identidad Visual',
+    description: 'Diseño de Logo, Pack de Plantillas Canva, Servicio Fotográfico Creaciones 360, Identidad de Marca.',
+    image: brandingImage,
+    cover: true
   },
   {
-    title: 'Estrategia de Contenidos',
-    description: 'Plan de acción personalizado por 3 meses. Calendario editorial, pilares de contenido y guiones para Reels virales.',
-    icon: 'mdi-chart-timeline-variant',
-    color: 'deep-purple',
-    price: 'Desde $297',
-    image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1000&auto=format&fit=crop'
+    title: 'Contenido y Social Media',
+    description: 'Estrategia Digital, Automatizaciones para Redes Sociales, Edición de Videos, Diseño de Imágenes y Creativos.',
+    image: contentImage,
+    cover: true
   },
   {
-    title: 'Mentoría 1:1',
-    description: 'Acompañamiento exclusivo durante 6 semanas. Reuniones semanales, soporte por WhatsApp y acceso a mi red de contactos.',
-    icon: 'mdi-star',
-    color: 'amber',
-    price: 'Consultar',
-    highlight: true,
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop'
+    title: 'Desarrollo Web y E-commerce',
+    description: 'Creación y mantenimiento de páginas Web, Creación de Landing Pages, E-commerce Especializado, Pagos Digitales.',
+    image: webImage,
+    cover: true
+  },
+  {
+    title: 'Growth y Performance',
+    description: 'Análisis del Embudo de Conversión, Email Marketing, Campañas Publicitarias.',
+    image: growthImage,
+    cover: false
   }
 ]
 </script>
@@ -42,42 +45,24 @@ const services = [
           v-for="(service, index) in services"
           :key="index"
           cols="12"
-          md="4"
+          md="3"
           data-aos="fade-up"
           :data-aos-delay="index * 100"
         >
           <v-card
-            class="h-100 pa-6 rounded-xl transition-swing overflow-visible mt-4"
-            :elevation="service.highlight ? 8 : 2"
-            :class="{ 'highlight-border': service.highlight }"
+            class="h-100 pa-0 rounded-xl transition-swing overflow-hidden mt-4"
+            elevation="2"
             hover
           >
             <v-img
               :src="service.image"
-              height="200"
-              cover
-              class="align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            >
-              <v-card-title class="text-white font-weight-bold" v-if="false"></v-card-title>
-            </v-img>
+              height="300"
+              :cover="service.cover"
+              class="align-end bg-black"
+            ></v-img>
             
-            <div v-if="service.highlight" class="popular-tag bg-secondary">Más Popular</div>
-            
-            <h3 class="text-h5 font-weight-bold mb-3 mt-6">{{ service.title }}</h3>
-            <p class="text-body-1 text-medium-emphasis mb-6">{{ service.description }}</p>
-
-            <div class="mt-auto pt-4 d-flex align-center justify-space-between border-t">
-              <span class="text-h6 font-weight-bold text-primary">{{ service.price }}</span>
-              <v-btn
-                variant="text"
-                color="secondary"
-                append-icon="mdi-arrow-right"
-                href="https://wa.me/1234567890?text=Hola,%20quiero%20más%20información%20sobre%20tus%20servicios"
-                target="_blank"
-              >
-                Saber más
-              </v-btn>
+            <div class="pa-6">
+              <p class="text-body-2 text-medium-emphasis mb-0">{{ service.description }}</p>
             </div>
           </v-card>
         </v-col>

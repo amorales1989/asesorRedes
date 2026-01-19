@@ -39,16 +39,7 @@ import heroImage from '../assets/hero-image.png'
             </v-btn>
           </div>
           
-          <div class="d-flex gap-8 pt-4 border-t">
-            <div class="d-flex flex-column">
-              <span class="text-h4 font-weight-bold text-primary">+500</span>
-              <span class="text-body-2 text-medium-emphasis">Alumnos</span>
-            </div>
-            <div class="d-flex flex-column">
-              <span class="text-h4 font-weight-bold text-primary">+10k</span>
-              <span class="text-body-2 text-medium-emphasis">Seguidores ganados</span>
-            </div>
-          </div>
+         
         </v-col>
         
         <v-col cols="12" md="5" class="position-relative" data-aos="fade-left" data-aos-delay="200">

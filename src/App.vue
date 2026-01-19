@@ -3,7 +3,9 @@ import AppHeader from './components/AppHeader.vue'
 import HeroSection from './components/HeroSection.vue'
 import ServicesGrid from './components/ServicesGrid.vue'
 import AboutSection from './components/AboutSection.vue'
+import TeamSection from './components/TeamSection.vue'
 import Testimonials from './components/Testimonials.vue'
+import ContactSection from './components/ContactSection.vue'
 import AppFooter from './components/AppFooter.vue'
 </script>
 
@@ -15,7 +17,9 @@ import AppFooter from './components/AppFooter.vue'
       <HeroSection />
       <ServicesGrid />
       <AboutSection />
+      <TeamSection />
       <Testimonials />
+      <ContactSection />
     </v-main>
     <AppFooter />
     

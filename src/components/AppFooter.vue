@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear()
       <v-row>
         <v-col cols="12" md="5" class="mb-8 mb-md-0">
           <h3 class="text-h5 font-weight-bold mb-4">
-            Asesor<span class="text-secondary">Social</span>
+            <span class="text-secondary">Vibe Check</span>
           </h3>
           <p class="text-body-2 text-grey-lighten-1 mb-6" style="max-width: 300px;">
             Ayudando a marcas y creadores a destacar en el mundo digital con estrategias reales y resultados medibles.
@@ -20,7 +20,7 @@ const currentYear = new Date().getFullYear()
           <div class="d-flex flex-column gap-2">
             <a href="#hero" class="footer-link">Inicio</a>
             <a href="#services" class="footer-link">Servicios</a>
-            <a href="#about" class="footer-link">Sobre Mí</a>
+            <a href="#about" class="footer-link">Somos Vibe Check</a>
             <a href="#testimonials" class="footer-link">Testimonios</a>
           </div>
         </v-col>
@@ -30,26 +30,22 @@ const currentYear = new Date().getFullYear()
           <div class="d-flex flex-column gap-3 mb-6">
             <div class="d-flex align-center">
               <v-icon icon="mdi-email" size="small" class="mr-2 text-grey-lighten-1"></v-icon>
-              <a href="mailto:hola@mentorsocial.com" class="footer-link">hola@mentorsocial.com</a>
+              <a href="mailto:somos.vibe.check@gmail.com " class="footer-link">somos.vibe.check@gmail.com </a>
             </div>
             <div class="d-flex align-center">
               <v-icon icon="mdi-instagram" size="small" class="mr-2 text-grey-lighten-1"></v-icon>
-              <a href="#" class="footer-link">@mentorsocial</a>
+              <a href="https://instagram.com/somos.vibe.check" target="_blank" class="footer-link">@somos.vibe.check</a>
+            </div>
+            <div class="d-flex align-center">
+              <v-icon icon="mdi-tiktok" size="small" class="mr-2 text-grey-lighten-1"></v-icon>
+              <a href="https://tiktok.com/@somos.vibe.check" target="_blank" class="footer-link">@somos.vibe.check</a>
             </div>
             <div class="d-flex align-center">
               <v-icon icon="mdi-linkedin" size="small" class="mr-2 text-grey-lighten-1"></v-icon>
-              <a href="#" class="footer-link">Fernando Mentor</a>
+              <a href="https://linkedin.com/company/somos-vibe-check" target="_blank" class="footer-link">Somos Vibe Check</a>
             </div>
           </div>
-          <v-btn
-            href="mailto:hola@mentorsocial.com"
-            color="secondary"
-            variant="flat"
-            rounded="lg"
-            class="text-capitalize font-weight-bold"
-          >
-            Escríbeme
-          </v-btn>
+          
         </v-col>
       </v-row>
       
