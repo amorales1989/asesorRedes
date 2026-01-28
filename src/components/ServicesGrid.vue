@@ -9,25 +9,29 @@ const services = [
     title: 'Branding e Identidad Visual',
     description: 'Diseño de Logo, Pack de Plantillas Canva, Servicio Fotográfico Creaciones 360, Identidad de Marca.',
     image: brandingImage,
-    cover: true
+    cover: true,
+    whatsappLink: 'https://wa.me/5491176426150?text=Me%20gustaría%20recibir%20información%20sobre%20el%20servicio%20de%20Branding%20e%20Identidad%20Visual'
   },
   {
     title: 'Contenido y Social Media',
     description: 'Estrategia Digital, Automatizaciones para Redes Sociales, Edición de Videos, Diseño de Imágenes y Creativos.',
     image: contentImage,
-    cover: true
+    cover: true,
+    whatsappLink: 'https://wa.me/5491176426150?text=Me%20gustaría%20recibir%20información%20sobre%20el%20servicio%20de%20Contenido%20y%20Social%20Media'
   },
   {
     title: 'Desarrollo Web y E-commerce',
     description: 'Creación y mantenimiento de páginas Web, Creación de Landing Pages, E-commerce Especializado, Pagos Digitales.',
     image: webImage,
-    cover: true
+    cover: true,
+    whatsappLink: 'https://wa.me/5491176426150?text=Me%20gustaría%20recibir%20información%20sobre%20el%20servicio%20de%20Desarrollo%20Web%20y%20E-commerce'
   },
   {
     title: 'Growth y Performance',
     description: 'Análisis del Embudo de Conversión, Email Marketing, Campañas Publicitarias.',
     image: growthImage,
-    cover: false
+    cover: false,
+    whatsappLink: 'https://wa.me/5491176426150?text=Me%20gustaría%20recibir%20información%20sobre%20el%20servicio%20de%20Growth%20y%20Performance'
   }
 ]
 </script>
@@ -53,13 +57,19 @@ const services = [
             class="h-100 pa-0 rounded-xl transition-swing overflow-hidden mt-4"
             elevation="2"
             hover
+            :href="service.whatsappLink"
+            target="_blank"
           >
             <v-img
               :src="service.image"
               height="300"
               :cover="service.cover"
               class="align-end bg-black"
-            ></v-img>
+            >
+              <div class="pa-4 bg-gradient-overlay w-100">
+                <h3 class="text-h6 font-weight-bold text-white">{{ service.title }}</h3>
+              </div>
+            </v-img>
             
             <div class="pa-6">
               <p class="text-body-2 text-medium-emphasis mb-0">{{ service.description }}</p>
@@ -92,5 +102,9 @@ const services = [
 
 .border-t {
   border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.bg-gradient-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
 }
 </style>

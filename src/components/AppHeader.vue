@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import vibeCheckHeaderLogo from '../assets/vibe-check-header-logo.png'
+import vibeCheckHeaderLogo from '../assets/vibe-check-logo-Photoroom.png'
 
 const drawer = ref(false)
 const menuItems = [
@@ -12,11 +12,11 @@ const menuItems = [
 </script>
 
 <template>
-  <v-app-bar app color="white" elevation="1" height="80" class="px-4">
+  <v-app-bar app color="rgb(var(--v-theme-primary))" elevation="1" height="80" class="px-4">
     <div class="d-flex align-center w-100 container">
       <v-toolbar-title class="font-weight-bold text-h5" style="cursor: pointer" @click="$vuetify.goTo('#hero')">
         <a href="#hero" class="text-decoration-none align-center">
-          <v-img :src="vibeCheckHeaderLogo" alt="Vibe Check Logo" width="150" style="margin-top: -50px;"></v-img>
+          <v-img :src="vibeCheckHeaderLogo" alt="Vibe Check Logo" width="150" style="background-color: rgb(var(--v-theme-primary))"></v-img>
         </a>
       </v-toolbar-title>
 
@@ -30,7 +30,7 @@ const menuItems = [
           :href="item.href"
           variant="text"
           class="text-capitalize font-weight-medium"
-          color="grey-darken-3"
+          color="white"
         >
           {{ item.title }}
         </v-btn>
@@ -41,6 +41,7 @@ const menuItems = [
       <!-- Mobile Menu Button -->
       <v-app-bar-nav-icon
         class="d-md-none"
+        color="white"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
     </div>

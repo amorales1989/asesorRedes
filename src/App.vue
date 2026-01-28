@@ -25,7 +25,7 @@ import AppFooter from './components/AppFooter.vue'
     
     <!-- Global WhatsApp Button -->
     <v-btn
-      href="https://wa.me/1234567890?text=Hola,%20quiero%20reservar%20una%20auditoría"
+      href="https://wa.me/5491176426150?text=Quisiera%20mas%20informacion%20sobre%20los%20servicios%20de%20Vibe%20Check"
       target="_blank"
       icon="mdi-whatsapp"
       color="green-darken-1"

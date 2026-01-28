@@ -37,7 +37,11 @@ const currentYear = new Date().getFullYear()
               <a href="https://instagram.com/somos.vibe.check" target="_blank" class="footer-link">@somos.vibe.check</a>
             </div>
             <div class="d-flex align-center">
-              <v-icon icon="mdi-tiktok" size="small" class="mr-2 text-grey-lighten-1"></v-icon>
+              <v-icon size="small" class="mr-2 text-grey-lighten-1">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                </svg>
+              </v-icon>
               <a href="https://tiktok.com/@somos.vibe.check" target="_blank" class="footer-link">@somos.vibe.check</a>
             </div>
             <div class="d-flex align-center">
@@ -52,7 +56,7 @@ const currentYear = new Date().getFullYear()
       <v-divider class="my-8 border-opacity-25"></v-divider>
       
       <div class="text-center text-body-2 text-grey-lighten-2">
-        &copy; {{ currentYear }} MentorSocial. Todos los derechos reservados.
+        &copy; {{ currentYear }} Vibe Check. Todos los derechos reservados.
       </div>
     </v-container>
   </v-footer>

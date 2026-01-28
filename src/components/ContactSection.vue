@@ -1,10 +1,18 @@
 <script setup>
 import { ref } from 'vue'
+import emailjs from '@emailjs/browser'
 import instagramIcon from '../assets/icon-instagram.png'
 import tiktokIcon from '../assets/icon-tiktok.png'
 import linkedinIcon from '../assets/icon-linkedin.png'
 
 const valid = ref(false)
+const loading = ref(false)
+const snackbar = ref({
+  show: false,
+  text: '',
+  color: ''
+})
+
 const form = ref({
   name: '',
   email: '',
@@ -40,10 +48,50 @@ const socialLinks = [
   }
 ]
 
-const submitForm = () => {
-  // Handle form submission logic here (e.g., send to API or email service)
-  console.log('Form submitted:', form.value)
-  // Reset form or show success message
+const submitForm = async () => {
+  if (!valid.value) return
+
+  loading.value = true
+  
+  try {
+    const templateParams = {
+      from_name: form.value.name,
+      reply_to: form.value.email,
+      phone: form.value.phone || 'No proporcionado',
+      message: form.value.question,
+      to_name: 'Vibe Check Team'
+    }
+
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+
+    snackbar.value = {
+      show: true,
+      text: '¡Mensaje enviado con éxito! Nos contactaremos pronto.',
+      color: 'success'
+    }
+    
+    // Reset form
+    form.value = {
+      name: '',
+      email: '',
+      phone: '',
+      question: ''
+    }
+  } catch (error) {
+    console.error('EmailJS Error:', error)
+    snackbar.value = {
+      show: true,
+      text: 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.',
+      color: 'error'
+    }
+  } finally {
+    loading.value = false
+  }
 }
 </script>
 
@@ -67,6 +115,7 @@ const submitForm = () => {
                     density="comfortable"
                     class="mb-4"
                     required
+                    :disabled="loading"
                   ></v-text-field>
                   
                   <v-text-field
@@ -77,6 +126,7 @@ const submitForm = () => {
                     density="comfortable"
                     class="mb-4"
                     required
+                    :disabled="loading"
                   ></v-text-field>
                   
                   <v-text-field
@@ -86,6 +136,7 @@ const submitForm = () => {
                     variant="outlined"
                     density="comfortable"
                     class="mb-4"
+                    :disabled="loading"
                   ></v-text-field>
                   
                   <v-textarea
@@ -95,6 +146,7 @@ const submitForm = () => {
                     density="comfortable"
                     rows="3"
                     class="mb-6"
+                    :disabled="loading"
                   ></v-textarea>
                   
                   <v-btn
@@ -103,7 +155,8 @@ const submitForm = () => {
                     block
                     size="large"
                     class="text-none font-weight-bold rounded-lg"
-                    :disabled="!valid"
+                    :disabled="!valid || loading"
+                    :loading="loading"
                   >
                     Enviar Mensaje
                   </v-btn>
@@ -142,6 +195,24 @@ const submitForm = () => {
         </v-col>
       </v-row>
     </v-container>
+
+    <v-snackbar
+      v-model="snackbar.show"
+      :color="snackbar.color"
+      timeout="5000"
+      elevation="24"
+    >
+      {{ snackbar.text }}
+      
+      <template v-slot:actions>
+        <v-btn
+          variant="text"
+          @click="snackbar.show = false"
+        >
+          Cerrar
+        </v-btn>
+      </template>
+    </v-snackbar>
   </section>
 </template>
 

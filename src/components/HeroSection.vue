@@ -17,7 +17,7 @@ import heroImage from '../assets/hero-image.png'
           
           <div class="d-flex flex-wrap gap-4 mb-12">
             <v-btn
-              href="https://wa.me/1234567890?text=Hola,%20quiero%20reservar%20una%20auditoría"
+      href="https://wa.me/5491176426150?text=Quisiera%20mas%20informacion%20sobre%20los%20servicios%20de%20Vibe%20Check"
               target="_blank"
               color="primary"
               size="x-large"

@@ -9,21 +9,24 @@ const team = [
     role: 'Community Manager & Ventas',
     description: 'Especialista en conectar con tu audiencia y cerrar ventas.',
     image: moreImage,
-    color: 'secondary'
+    color: 'secondary',
+    whatsapp: 'https://wa.me/5491176426150?text=Hola%20Dani,%20quisiera%20más%20información%20sobre%20los%20servicios%20de%20Vibe%20Check'
   },
   {
     name: 'More',
     role: 'Diseñadora Gráfica & Social Media Manager',
     description: 'Encargada de todo el área de creación y publicidad para que tu negocio llegue a más personas.',
     image: daniImage,
-    color: 'primary'
+    color: 'primary',
+    whatsapp: 'https://wa.me/5491176426150?text=Hola%20More,%20quisiera%20más%20información%20sobre%20los%20servicios%20de%20Vibe%20Check'
   },
   {
     name: 'Fer',
     role: 'Gestión y Planificación',
     description: 'Asegura que cada paso de tu estrategia esté perfectamente orquestado.',
     image: ferImage,
-    color: 'accent'
+    color: 'accent',
+    whatsapp: 'https://wa.me/5491176426150?text=Hola%20Fer,%20quisiera%20más%20información%20sobre%20los%20servicios%20de%20Vibe%20Check'
   }
 ]
 </script>
@@ -39,6 +42,8 @@ const team = [
               :key="index"
               class="team-card d-flex flex-column flex-sm-row align-center pa-6 rounded-xl elevation-3"
               hover
+              :href="member.whatsapp"
+              target="_blank"
               data-aos="fade-up"
               :data-aos-delay="index * 100"
             >
@@ -49,7 +54,10 @@ const team = [
               </div>
               
               <div class="text-center text-sm-left flex-grow-1">
-                <h3 class="text-h4 font-weight-bold mb-1 text-primary">{{ member.name }}</h3>
+                <div class="d-flex align-center justify-center justify-sm-start mb-1">
+                  <h3 class="text-h4 font-weight-bold text-primary mr-3">{{ member.name }}</h3>
+                  <v-icon icon="mdi-whatsapp" color="green" size="28"></v-icon>
+                </div>
                 <span class="text-subtitle-1 font-weight-bold text-secondary d-block mb-3">{{ member.role }}</span>
                 <p class="text-body-1 text-medium-emphasis">{{ member.description }}</p>
               </div>
