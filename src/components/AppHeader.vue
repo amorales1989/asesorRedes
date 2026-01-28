@@ -16,12 +16,12 @@ const menuItems = [
     <v-container class="d-flex align-center py-0">
       <v-toolbar-title class="font-weight-bold text-h5" style="cursor: pointer" @click="$vuetify.goTo('#hero')">
         <a href="#hero" class="text-decoration-none d-flex align-center">
-          <v-img 
-            :src="vibeCheckHeaderLogo" 
-            alt="Vibe Check Logo" 
-            :width="$vuetify.display.smAndDown ? 120 : 150" 
-            style="background-color: rgb(var(--v-theme-primary))"
-          ></v-img>
+          <div style="width: 110px;">
+            <v-img 
+              :src="vibeCheckHeaderLogo" 
+              alt="Vibe Check Logo" 
+            ></v-img>
+          </div>
         </a>
       </v-toolbar-title>
 
