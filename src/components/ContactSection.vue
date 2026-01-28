@@ -48,6 +48,27 @@ const socialLinks = [
   }
 ]
 
+const rules = {
+  required: value => !!value || 'Este campo es obligatorio.',
+  email: value => {
+    const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return pattern.test(value) || 'Correo electrónico inválido.'
+  },
+  phone: value => {
+    const pattern = /^[0-9]+$/
+    return pattern.test(value) || 'Solo se permiten números.'
+  }
+}
+
+const isNumber = (evt) => {
+  const charCode = (evt.which) ? evt.which : evt.keyCode
+  if ((charCode > 31 && (charCode < 48 || charCode > 57))) {
+    evt.preventDefault()
+  } else {
+    return true
+  }
+}
+
 const submitForm = async () => {
   if (!valid.value) return
 
@@ -115,6 +136,7 @@ const submitForm = async () => {
                     density="comfortable"
                     class="mb-4"
                     required
+                    :rules="[rules.required]"
                     :disabled="loading"
                   ></v-text-field>
                   
@@ -126,6 +148,7 @@ const submitForm = async () => {
                     density="comfortable"
                     class="mb-4"
                     required
+                    :rules="[rules.required, rules.email]"
                     :disabled="loading"
                   ></v-text-field>
                   
@@ -136,7 +159,10 @@ const submitForm = async () => {
                     variant="outlined"
                     density="comfortable"
                     class="mb-4"
+                    required
+                    :rules="[rules.required, rules.phone]"
                     :disabled="loading"
+                    @keypress="isNumber($event)"
                   ></v-text-field>
                   
                   <v-textarea
@@ -146,6 +172,8 @@ const submitForm = async () => {
                     density="comfortable"
                     rows="3"
                     class="mb-6"
+                    required
+                    :rules="[rules.required]"
                     :disabled="loading"
                   ></v-textarea>
                   
