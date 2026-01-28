@@ -14,9 +14,9 @@ const menuItems = [
 <template>
   <v-app-bar app fixed color="rgb(var(--v-theme-primary))" elevation="1" height="80">
     <v-container class="d-flex align-center py-0">
-      <v-toolbar-title class="font-weight-bold text-h5" style="cursor: pointer" @click="$vuetify.goTo('#hero')">
+      <v-toolbar-title class="font-weight-bold text-h5" >
         <a href="#hero" class="text-decoration-none d-flex align-center">
-          <div style="width: 110px;">
+          <div style="width: 110px; cursor: pointer" @click="$vuetify.goTo('#hero')">
             <v-img 
               :src="vibeCheckHeaderLogo" 
               alt="Vibe Check Logo" 
