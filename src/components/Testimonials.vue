@@ -90,6 +90,7 @@ const testimonials = {
           color="secondary"
           align-tabs="center"
           class="rounded-pill"
+          show-arrows
         >
           <v-tab
             v-for="category in categories"

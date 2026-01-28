@@ -12,11 +12,16 @@ const menuItems = [
 </script>
 
 <template>
-  <v-app-bar app color="rgb(var(--v-theme-primary))" elevation="1" height="80" class="px-4">
-    <div class="d-flex align-center w-100 container">
+  <v-app-bar app fixed color="rgb(var(--v-theme-primary))" elevation="1" height="80">
+    <v-container class="d-flex align-center py-0">
       <v-toolbar-title class="font-weight-bold text-h5" style="cursor: pointer" @click="$vuetify.goTo('#hero')">
-        <a href="#hero" class="text-decoration-none align-center">
-          <v-img :src="vibeCheckHeaderLogo" alt="Vibe Check Logo" width="150" style="background-color: rgb(var(--v-theme-primary))"></v-img>
+        <a href="#hero" class="text-decoration-none d-flex align-center">
+          <v-img 
+            :src="vibeCheckHeaderLogo" 
+            alt="Vibe Check Logo" 
+            :width="$vuetify.display.smAndDown ? 120 : 150" 
+            style="background-color: rgb(var(--v-theme-primary))"
+          ></v-img>
         </a>
       </v-toolbar-title>
 
@@ -34,8 +39,6 @@ const menuItems = [
         >
           {{ item.title }}
         </v-btn>
-        
-      
       </div>
 
       <!-- Mobile Menu Button -->
@@ -44,7 +47,7 @@ const menuItems = [
         color="white"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
-    </div>
+    </v-container>
   </v-app-bar>
 
   <!-- Mobile Navigation Drawer -->

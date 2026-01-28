@@ -54,13 +54,13 @@ import heroImage from '../assets/hero-image.png'
             ></v-img>
             
             <!-- Floating Social Icons -->
-            <v-card class="floating-icon icon-facebook" elevation="4">
+            <v-card class="floating-icon icon-facebook d-none d-md-flex" elevation="4">
               <v-icon icon="mdi-facebook" color="blue" size="32"></v-icon>
             </v-card>
-            <v-card class="floating-icon icon-whatsapp" elevation="4">
+            <v-card class="floating-icon icon-whatsapp d-none d-md-flex" elevation="4">
               <v-icon icon="mdi-whatsapp" color="green" size="32"></v-icon>
             </v-card>
-            <v-card class="floating-icon icon-instagram" elevation="4">
+            <v-card class="floating-icon icon-instagram d-none d-md-flex" elevation="4">
               <v-icon icon="mdi-instagram" color="purple" size="32"></v-icon>
             </v-card>
           </div>
