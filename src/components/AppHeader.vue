@@ -14,15 +14,27 @@ const menuItems = [
 <template>
   <v-app-bar app fixed color="rgb(var(--v-theme-primary))" elevation="1" height="80">
     <v-container class="d-flex align-center py-0">
-      <v-toolbar-title class="font-weight-bold text-h5" >
-        <a href="#hero" class="text-decoration-none d-flex align-center" style="width: max-content;"  >
-          <div style="width: 110px; cursor: pointer" @click="$vuetify.goTo('#hero')">
-            <v-img 
-              :src="vibeCheckHeaderLogo" 
-              alt="Vibe Check Logo" 
-            ></v-img>
+      <v-toolbar-title class="pa-0">
+        <div class="d-flex align-center">
+          <a href="#hero" class="text-decoration-none d-flex align-center" style="width: max-content;">
+            <div :style="{ width: $vuetify.display.xs ? '75px' : '100px', cursor: 'pointer' }" @click="$vuetify.goTo('#hero')">
+              <v-img 
+                :src="vibeCheckHeaderLogo" 
+                alt="Vibe Check Logo" 
+              ></v-img>
+            </div>
+          </a>
+          <div class="ml-2 ml-md-3 pl-2 pl-md-3" style="border-left: 1px solid rgba(255,255,255,0.3); line-height: 1.1;">
+            <div class="text-white font-weight-light opacity-90" 
+                 :style="{ 
+                   fontSize: $vuetify.display.xs ? '10px' : '13px',
+                   maxWidth: $vuetify.display.xs ? '150px' : '250px',
+                   whiteSpace: 'normal'
+                 }">
+              Somos Vibe Check. Agencia de Marketing Digital y Social Media
+            </div>
           </div>
-        </a>
+        </div>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>

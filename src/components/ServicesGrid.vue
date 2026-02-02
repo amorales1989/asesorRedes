@@ -62,7 +62,8 @@ const services = [
           >
             <v-img
               :src="service.image"
-              height="300"
+              :height="$vuetify.display.xs ? 'auto' : '300'"
+              :aspect-ratio="$vuetify.display.xs ? 1 : undefined"
               :cover="service.cover"
               class="align-end bg-black"
             >
